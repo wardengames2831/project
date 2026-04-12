@@ -1,58 +1,106 @@
 body {
-    background-color: #696969;
+    background-color: #696969ff;
 }
 
 .container {
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
     gap: 16px;
+    display: grid;
+    place-items: center;
+    z-index: 1;
 }
 
-.block {
-    background-color: #505050;
-    width: 400px;
-    width: 400px;
+.container > * {
+    grid-area: 1 / 1;
+}
+
+.buttons {
+    background-color: #505050ff;
+    width: auto;
     display: flex;
-    justify-content: space-between;
+    gap: 16px;
+    padding: 10px;
+    z-index: 2;
     
 }
 
-.button-1 {
+.red {
     width: 50px;
     height: 50px;
-    background-color: #dd0000;
+    background-color: #dd0000ff;
 }
 
-.button-2 {
+.red:hover {
+    transform: scale(1.2);
+}
+
+.blue {
     width: 50px;
     height: 50px;
-    background-color: #0000dd;
+    background-color: #0000ddff;
 }
 
-.button-3 {
+.blue:hover {
+    transform: scale(1.2);
+}
+
+.green {
     width: 50px;
     height: 50px;
-    background-color: #00dd00;
+    background-color: #00dd00ff;
 }
 
-.button-4 {
+.green:hover {
+    transform: scale(1.2);
+}
+
+.yellow {
     width: 50px;
     height: 50px;
-    background-color: #dddd00;
+    background-color: #dddd00ff;
 }
 
-.button-5 {
+.yellow:hover {
+    transform: scale(1.2);
+}
+
+.white {
     width: 50px;
     height: 50px;
-    background-color: #aa00ff;
+    background-color: #ffffffff;
 }
 
-.button-6 {
+.white:hover {
+    transform: scale(1.2);
+}
+
+.black {
     width: 50px;
     height: 50px;
-    background-color: #ffbb00;
+    background-color: #000000ff;
 }
 
+.black:hover {
+    transform: scale(1.2);
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    border-radius: 20px;
+    transition: transform 5s ease;
+}
+
+.is-large {
+    transform: scale(500); 
+
+}
+
+.h1 {
+    z-index: 2;
+}
+  
