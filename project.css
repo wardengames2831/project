@@ -40,29 +40,23 @@ body {
 }
 
 
-.red {
+.white {
     width: 50px;
     height: 50px;
-    background-color:#aa0000;
+    background-image: url('free-icon-season-12895789.png');
+    background-size: cover;
+    background-color: #dddddd;
 }
 
-.red:hover {
-    transform: scale(1.2);
-}
-
-.blue {
-    width: 50px;
-    height: 50px;
-    background-color: #0000aa;
-}
-
-.blue:hover {
+.white:hover {
     transform: scale(1.2);
 }
 
 .green {
     width: 50px;
     height: 50px;
+    background-image: url('free-icon-flower-340761.png');
+    background-size: cover;
     background-color: #00aa00;
 }
 
@@ -73,6 +67,8 @@ body {
 .yellow {
     width: 50px;
     height: 50px;
+    background-image: url('free-icon-sun-606795.png');
+    background-size: cover;
     background-color: #ccbb00;
 }
 
@@ -80,25 +76,19 @@ body {
     transform: scale(1.2);
 }
 
-.white {
+.red {
     width: 50px;
     height: 50px;
-    background-color: #dddddd;
+    background-image: url('free-icon-maple-leaf-3504621.png');
+    background-size: cover;
+    background-color:#aa0000;
 }
 
-.white:hover {
+.red:hover {
     transform: scale(1.2);
 }
 
-.black {
-    width: 50px;
-    height: 50px;
-    background-color: #222222;
-}
 
-.black:hover {
-    transform: scale(1.2);
-}
 
 .circle {
     width: 40px;
@@ -129,5 +119,7 @@ body {
     background-color: #777777;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:center;
+    flex-direction: column; 
 }
+
