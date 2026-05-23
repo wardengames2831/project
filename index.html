@@ -3,30 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project</title>
+    <title>ЭКСПЕРИМЕНТ</title>
+    <!-- Шрифт -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="project.css">
 </head>
 <body>
-    <h1 class="h1">"ЭКСПЕРЕМЕНТ"</h1>
-    <div class="container">
+    <!-- АНИМАЦИОННЫЙ КРУГ -->
+    <div class="circle"></div>
+    <!-- ОСНОВНОЙ КОНТЕЙНЕР -->
+    <main class="container">
+        <!-- ЗАГОЛОВОК -->
+        <h1 class="title">
+            ПРАЗДНИКИ
+        </h1>
+        <p class="subtitle">
+            Выбери сезон и узнай случайный праздник
+        </p>
+        <!-- КНОПКИ -->
         <div class="color-but">
             <div class="buttons">
-                <div class="button white"></div>
-                <div class="button green"></div>
-                <div class="button yellow"></div>
-                <div class="button red"></div> 
+                <div class="button white" title="Зима"></div>
+                <div class="button green" title="Весна"></div>
+                <div class="button yellow" title="Лето"></div>
+                <div class="button red" title="Осень"></div>
             </div>
-                <div class='circle'></div>    
         </div>
-    
-    </div>
-    <div class="screen">
-        <div class="scr">
-            <input type="date" class="date">
-            <h1 id="text">Описание</h1>
-        </div>
-    </div>
-
+        <!-- ЭКРАН -->
+        <section class="screen">
+            <div class="scr">
+                <!-- ДАТА -->
+                <input type="date" class="date">
+                <!-- КНОПКА -->
+                <button class="rand">
+                    Случайный праздник
+                </button>
+                <!-- ВЫВОД -->
+                <div class="result">
+                    <p id="text2">
+                        Дата праздника
+                    </p>
+                    <h2 id="text">
+                        Название праздника
+                    </h2>
+                    <p id="text1">
+                        Здесь появится описание праздника...
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
     <script src="project.js"></script>
 </body>
 </html>
+

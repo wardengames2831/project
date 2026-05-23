@@ -1835,42 +1835,74 @@ const circle = document.querySelector('.circle');
 
 buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-        const Style = window.getComputedStyle(btn);
-        const color = Style.backgroundColor;  
-        
-        // circle.classList.remove('is-large');
-        // circle.style.transition = 'none';
+        if (btn.classList.contains('white')) {
 
-        // void circle.offsetWidth; 
+            document.body.style.backgroundImage =
+                "url('spruce-forest-winter-covered-with-snow.jpg')";
 
-        // circle.style.backgroundImage = `radial-gradient(circle, ${color}, transparent)`;
-        // circle.style.transition = 'transform 1s ease';
+        }
+        if (btn.classList.contains('green')) {
 
-        // circle.classList.add('is-large');
-        setTimeout(() => {
-            document.body.style.backgroundColor = color;
-            // circle.classList.remove('is-large');
-        }, 0);
+            document.body.style.backgroundImage =
+                "url('branch-with-white-flowers.jpg')";
+
+        }
+        if (btn.classList.contains('yellow')) {
+
+            document.body.style.backgroundImage =
+                "url('towel-with-wummer-complements.jpg')";
+
+        }
+        if (btn.classList.contains('red')) {
+
+            document.body.style.backgroundImage =
+                "url('park-sunset.jpg')";
+
+        }
     });
   });
 
 const date = document.querySelector('.date');
+
+let randbut = document.querySelector('.rand');
+
+randbut.addEventListener('click', function(){
+    let day = (Math.floor(Math.random()*(31-1+1)+1)).toString().padStart(2,'0')
+    let month = (Math.floor(Math.random()*(12-1+1)+1)).toString().padStart(2,'0')
+    setHoliday(day, month)
+})
 
 date.addEventListener('change', function(e){
     let date_text = e.target.value
     let date_split = date_text.split('-')
     let month = date_split[1]
     let day = date_split[2]
+    setHoliday(day, month)
+})
+
+function setHoliday(day, month) {
     let monthday = month+'-'+day
     for (let i = 0; i<spisok.length; i++){
         let element = spisok[i]
         if (element.id == monthday){
-            document.getElementById('text').innerHTML = element
+            document.getElementById('text').innerHTML = element.name
+            document.getElementById('text1').innerHTML = element.description
+            document.getElementById('text2').innerHTML = monthday
             break
         }
            
     }
-    
-    
 
-})
+    if (month == 1|| month == 2|| month == 12)
+        document.body.style.backgroundImage = "url('spruce-forest-winter-covered-with-snow.jpg')";
+
+    if (month == 3|| month == 4|| month == 5)
+        document.body.style.backgroundImage = "url('branch-with-white-flowers.jpg')";
+
+    if (month == 6|| month == 7|| month == 8)
+        document.body.style.backgroundImage = "url('towel-with-wummer-complements.jpg')";
+
+    if (month == 9|| month == 10|| month == 11)
+        document.body.style.backgroundImage = "url('park-sunset.jpg')";
+}
+

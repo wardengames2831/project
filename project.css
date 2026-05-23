@@ -1,125 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #696969ff;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4b4b4b,
+            #696969,
+            #3f3f3f
+        );
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    color: white;
+}
+
+/* ===== ГЛАВНЫЙ КОНТЕЙНЕР ===== */
+
+.container {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    gap: 20px;
+    z-index: 2;
 }
 
-.container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    z-index: 1;
-    flex-direction: column; 
-    gap: 10px;
-}
+/* ===== БЛОК С КНОПКАМИ ===== */
 
 .color-but {
-    display: grid;
-    place-items: center;
-}
-
-.container > * {
-    grid-area: 1 / 1;
-}
-
-.buttons {
-    background-color: #505050ff;
-    width: auto;
-    display: flex;
-    gap: 16px;
-    padding: 10px;
-    z-index: 2;
-    
-}
-
-
-.white {
-    width: 50px;
-    height: 50px;
-    background-image: url('free-icon-season-12895789.png');
-    background-size: cover;
-    background-color: #dddddd;
-}
-
-.white:hover {
-    transform: scale(1.2);
-}
-
-.green {
-    width: 50px;
-    height: 50px;
-    background-image: url('free-icon-flower-340761.png');
-    background-size: cover;
-    background-color: #00aa00;
-}
-
-.green:hover {
-    transform: scale(1.2);
-}
-
-.yellow {
-    width: 50px;
-    height: 50px;
-    background-image: url('free-icon-sun-606795.png');
-    background-size: cover;
-    background-color: #ccbb00;
-}
-
-.yellow:hover {
-    transform: scale(1.2);
-}
-
-.red {
-    width: 50px;
-    height: 50px;
-    background-image: url('free-icon-maple-leaf-3504621.png');
-    background-size: cover;
-    background-color:#aa0000;
-}
-
-.red:hover {
-    transform: scale(1.2);
-}
-
-
-
-.circle {
-    width: 40px;
-    height: 40px;
-    z-index: 1;
-    border-radius: 20px;
-    transform: scale(0);
-    
-    transition: transform 5s ease;
-}
-
-.circle.is-large {
-    transform: scale(500); 
-    transition: none;
-}
-
-.screen {
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
 }
-  
-.scr {
-    width: 600px;
-    height: 300px;
-    background-color: #777777;
+
+.buttons {
+    display: flex;
+    gap: 18px;
+
+    padding: 14px 20px;
+
+    background: rgba(80, 80, 80, 0.75);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35);
+
+    z-index: 3;
+}
+
+/* ===== ОБЩИЙ СТИЛЬ КНОПОК ===== */
+
+.button {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 16px;
+
+    background-size: cover;
+    background-position: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.15) rotate(4deg);
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,0.5);
+}
+
+/* ===== КНОПКИ ===== */
+
+.white {
+    background-image: url('free-icon-season-12895789.png');
+    background-color: #dddddd;
+}
+
+.green {
+    background-image: url('free-icon-flower-340761.png');
+    background-color: #00aa00;
+}
+
+.yellow {
+    background-image: url('free-icon-sun-606795.png');
+    background-color: #ccbb00;
+}
+
+.red {
+    background-image: url('free-icon-maple-leaf-3504621.png');
+    background-color: #aa0000;
+}
+
+
+/* ===== ЭКРАН ===== */
+
+.screen {
+    width: 100%;
+
     display: flex;
     justify-content: center;
-    align-items:center;
-    flex-direction: column; 
+    align-items: center;
+
+    z-index: 2;
+}
+
+.scr {
+    width: 650px;
+    min-height: 340px;
+
+    padding: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 20px;
+
+    background: rgba(119,119,119,0.65);
+
+    border-radius: 28px;
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.4);
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+}
+
+/* ===== INPUT ===== */
+
+.date {
+    padding: 12px 18px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    background: rgba(255,255,255,0.15);
+
+    color: white;
+}
+
+/* ===== КНОПКА ===== */
+
+.rand {
+    padding: 14px 24px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b82f6,
+            #8b5cf6
+        );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.rand:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 20px rgba(59,130,246,0.4);
+}
+
+/* ===== ТЕКСТ ===== */
+
+#text {
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+#text1 {
+    text-align: center;
+    line-height: 1.6;
+
+    color: rgba(255,255,255,0.85);
+}
+
+/* ===== АДАПТИВ ===== */
+
+@media (max-width: 700px) {
+
+    .scr {
+        width: 92%;
+        min-height: auto;
+    }
+
+    .buttons {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #text {
+        font-size: 24px;
+    }
 }
 
